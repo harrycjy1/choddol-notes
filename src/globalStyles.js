@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
     :root {
         --greyColor: #A2A19E;
         --blackColor: #373630;
