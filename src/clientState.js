@@ -6,6 +6,7 @@ export const defaults = {
   notes: restoreNotes()
 };
 
+//타입을 미리 정의
 export const typeDefs = [
   `
     schema {

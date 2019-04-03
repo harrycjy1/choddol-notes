@@ -5,8 +5,8 @@ import Editor from "../../Components/Editor";
 import gql from "graphql-tag";
 
 const EDIT_NOTE = gql`
-  mutation editNote($id: Int!, $title: String!, $Content: String!) @client {
-    editNote(title: $title, content: $title, id: $id) {
+  mutation editNote($id: Int!, $title: String!, $content: String!) @client {
+    editNote(title: $title, content: $content, id: $id) {
       id
     }
   }
