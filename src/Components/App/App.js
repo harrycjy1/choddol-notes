@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import { Query } from "react-apollo";
-import { GET_NOTES } from "../../queries";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Notes from "../../Routes/Notes";
 import Note from "../../Routes/Note";

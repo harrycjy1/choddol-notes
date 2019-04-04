@@ -1,4 +1,4 @@
-import { GET_NOTES, GET_NOTE } from "./queries";
+import { GET_NOTES } from "./queries";
 
 export const saveNotes = cache => {
   const { notes } = cache.readQuery({ query: GET_NOTES });
