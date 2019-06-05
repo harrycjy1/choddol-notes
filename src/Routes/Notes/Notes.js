@@ -71,7 +71,7 @@ export default class NotesContainer extends React.Component {
                 <Plus />
               </Button>
             </Link>
-            <Button onClick={cleanNote}>Clean</Button>
+            <Button onClick={() => cleanNote()}>Clean</Button>
           </Title>
           <Subtitle>Taking notes while we learn</Subtitle>
         </Header>
