@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { ReactComponent as Plus } from "../../Components/plus.svg";
 import { GET_NOTES } from "../../queries";
+import { cleanNote, deleteNote } from "../../offline";
 
 const Header = styled.div`
   margin-bottom: 50px;
@@ -70,6 +71,7 @@ export default class NotesContainer extends React.Component {
                 <Plus />
               </Button>
             </Link>
+            <Button onClick={cleanNote}>Clean</Button>
           </Title>
           <Subtitle>Taking notes while we learn</Subtitle>
         </Header>
@@ -78,11 +80,16 @@ export default class NotesContainer extends React.Component {
             {({ data }) =>
               data.notes
                 ? data.notes.map(note => (
-                    <Link to={`/note/${note.id}`} key={note.id}>
-                      <Note>
-                        <NoteTitle>{note.title}</NoteTitle>
-                      </Note>
-                    </Link>
+                    <>
+                      <Link to={`/note/${note.id}`} key={note.id}>
+                        <Note>
+                          <NoteTitle>{note.title}</NoteTitle>
+                        </Note>
+                      </Link>
+                      <Button onClick={() => deleteNote(note.id)}>
+                        delete
+                      </Button>
+                    </>
                   ))
                 : null
             }

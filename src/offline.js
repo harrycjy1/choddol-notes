@@ -22,3 +22,28 @@ export const restoreNotes = () => {
   }
   return [];
 };
+
+export const cleanNote = () => {
+  //eslint-disable-next-line
+  const check = confirm("are you sure??");
+
+  if (check) {
+    localStorage.removeItem("notes");
+  }
+
+  window.location.reload();
+};
+
+export const deleteNote = noteId => {
+  const notes = localStorage.getItem("notes");
+
+  if (notes) {
+    const parsedNotes = JSON.parse(notes);
+    const result = parsedNotes.filter(parsednote => parsednote.id !== noteId);
+
+    if (result) {
+      localStorage.setItem("notes", JSON.stringify(result));
+      window.location.reload();
+    }
+  }
+};
