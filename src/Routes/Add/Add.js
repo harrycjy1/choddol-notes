@@ -16,7 +16,6 @@ export default class Add extends React.Component {
     return (
       <Mutation mutation={ADD_NOTE}>
         {createNote => {
-          console.log(this.props);
           this.createNote = createNote;
           return <Editor onSave={this._onSave} />;
         }}
